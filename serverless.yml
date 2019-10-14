@@ -1,0 +1,30 @@
+service:
+  name: serverless-demo-javascript
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  profile: serverless-admin
+
+functions:
+  listBuckets:
+    handler: handler.listBuckets
+    events:
+      - http:
+          method: get
+          path: bucket
+          cors: true
+  listBucketObjects:
+    handler: handler.listBucketObjects
+    events:
+      - http:
+          method: get
+          path: bucket/{bucket}
+          cors: true
