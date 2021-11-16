@@ -8,7 +8,7 @@
     "listBucketObjects": "serverless invoke local -f listBucketObjects"
   },
   "dependencies": {
-    "aws-sdk": "^2.548.0",
+    "aws-sdk": "^2.814.0",
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {
